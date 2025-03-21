@@ -1,3 +1,5 @@
-This is my Portfolio website.
+This Portfolio tells about me. And absolutely it's created by me..
 
-Check now : https://shaliniga.github.io/Shalini-Portfolio/
+ Check out My Site : https://shaliniga.github.io/Shalini-Portfolio/
+
+ I used React JS, Java Script and Tailwind CSS for Design. Deployed my website in Github gh pages.
