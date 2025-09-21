@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Shalini-Portfolio/static/css/main.7df48138.css",
+    "main.js": "/Shalini-Portfolio/static/js/main.e84f0b42.js",
+    "static/media/shalini1.jpeg": "/Shalini-Portfolio/static/media/shalini1.131d72ab797f838e69d7.jpeg",
+    "static/media/resume.pdf": "/Shalini-Portfolio/static/media/resume.94d9dea24607b7bdbfab.pdf",
+    "static/media/about.png": "/Shalini-Portfolio/static/media/about.7b10eb24229ebc02d3cd.png",
+    "static/media/resume 3.jpg": "/Shalini-Portfolio/static/media/resume 3.7682f66d05374ce16905.jpg",
+    "index.html": "/Shalini-Portfolio/index.html",
+    "main.7df48138.css.map": "/Shalini-Portfolio/static/css/main.7df48138.css.map",
+    "main.e84f0b42.js.map": "/Shalini-Portfolio/static/js/main.e84f0b42.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7df48138.css",
+    "static/js/main.e84f0b42.js"
+  ]
+}
