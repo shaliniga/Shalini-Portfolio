@@ -1,5 +1,5 @@
 import Resumepic from '../assets/resume 3.jpg'
-import Resumepdf from '../assets/shalini Resume.pdf'
+import Resumepdf from '../assets/resume.pdf'
 import '../App.css';
 
 export default function Resume(){
