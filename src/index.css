@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Fonts loaded via index.html ───────── */
+
+@layer base {
+  :root {
+    --lime: #a3e635;
+    --lime-glow: #84cc16;
+    --bg-base: #050905;
+    --bg-surface: #0d160d;
+    --bg-card: #111a11;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--bg-base);
+    color: #f0fdf4;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+
+  ::selection {
+    background: #a3e63540;
+    color: #a3e635;
+  }
+}
+
+/* ─── Scrollbar ─────────────────────────── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #050905; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #a3e635, #22c55e);
+  border-radius: 99px;
+}
+
+/* ─── Noise texture ─────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 128px 128px;
+}
+
+/* ─── Utilities ─────────────────────────── */
+@layer utilities {
+  .lime-text {
+    color: var(--lime);
+  }
+  .lime-border {
+    border-color: var(--lime);
+  }
+  .lime-bg {
+    background-color: var(--lime);
+  }
+
+  .glow-lime {
+    box-shadow: 0 0 30px #a3e63530, 0 0 80px #a3e63515;
+  }
+  .glow-lime-hover:hover {
+    box-shadow: 0 0 40px #a3e63550, 0 0 100px #a3e63520;
+  }
+
+  .text-gradient-lime {
+    background: linear-gradient(135deg, #a3e635 0%, #22c55e 60%, #86efac 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .card-dark {
+    background: #111a11;
+    border: 1px solid #1f2d1f;
+  }
+
+  .card-dark:hover {
+    border-color: #a3e63530;
+    box-shadow: 0 0 30px #a3e63510;
+  }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #a3e635;
+  }
+
+  .bg-grid-pattern {
+    background-image:
+      linear-gradient(#a3e63508 1px, transparent 1px),
+      linear-gradient(90deg, #a3e63508 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .number-bg {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    font-size: clamp(6rem, 18vw, 14rem);
+    line-height: 1;
+    letter-spacing: -0.05em;
+    color: #1a2e1a;
+    user-select: none;
+    pointer-events: none;
+  }
+}
+
+/* ─── Marquee ────────────────────────────── */
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  width: max-content;
+}
+.marquee-forward { animation: marquee 32s linear infinite; }
+.marquee-reverse { animation: marquee 32s linear infinite reverse; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ─── Scanline overlay ───────────────────── */
+.scanlines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    #00000010 2px,
+    #00000010 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ─── Bento card ─────────────────────────── */
+.bento {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+}
+
+@media (max-width: 768px) {
+  .bento { grid-template-columns: 1fr; }
+}
+
+/* ─── Cursor glow ────────────────────────── */
+.cursor-glow {
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #a3e63508 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+}
