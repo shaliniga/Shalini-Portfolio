@@ -12,7 +12,7 @@ const projects = [
     tags: ['React', 'Node.js', 'MongoDB', 'Express.js'],
     image: 'https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&q=80&w=1400',
     github: 'https://github.com/shaliniga/Ecart-Website',
-    live: '#',
+    live: 'https://ecart-website-r5yq.onrender.com/',
   },
   {
     num: '02',
