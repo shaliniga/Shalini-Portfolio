@@ -2,14 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const SKILLS = {
-  Frontend: ['React.js', 'JavaScript (ES6+)', 'TypeScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'Redux Toolkit', 'Context API', 'React Router', 'Vite', 'Webpack'],
-  Backend: ['Node.js', 'Express.js', 'Java', 'Spring Boot', 'PHP', 'REST APIs', 'JWT Authentication', 'API Integration'],
-  'DB & Tools': ['MongoDB', 'MySQL', 'Git', 'GitHub', 'WordPress', 'Postman', 'Figma', 'Jira', 'Render', 'Vercel'],
-  'Core Concepts': ['System Design', 'DSA', 'OOP', 'Agile', 'REST Architecture', 'MVC', 'Responsive Design', 'Performance Optimization', 'Clean Code'],
+  Frontend: ['React.js', 'TypeScript', 'JavaScript (ES6+)', 'Tailwind CSS', 'React Query', 'Zustand', 'Recharts', 'React Hook Form', 'Zod', 'Redux Toolkit', 'HTML5', 'CSS3', 'Vite', 'Webpack'],
+  Backend: ['Node.js', 'Express.js', 'TypeScript', 'PostgreSQL', 'Drizzle ORM', 'Supabase', 'REST APIs', 'JWT Authentication', 'Swagger / OpenAPI', 'Java', 'Spring Boot', 'PHP'],
+  'DB & Tools': ['PostgreSQL', 'Supabase', 'Drizzle ORM', 'MongoDB', 'MySQL', 'Git', 'GitHub', 'Postman', 'Swagger', 'Figma', 'Jira', 'Render', 'Vercel'],
+  'Core Concepts': ['System Design', 'DSA', 'OOP', 'RBAC Security', 'State Management', 'Schema Validation', 'REST Architecture', 'Agile', 'Responsive Design', 'Performance Optimization'],
 };
 
-const TAPE_A = ['React.js', 'TypeScript', 'Java', 'JavaScript', 'Node.js', 'Spring Boot', 'Redux Toolkit', 'Tailwind CSS', 'REST APIs', 'PHP', 'WordPress', 'Vite', 'Webpack'];
-const TAPE_B = ['System Design', 'DSA', 'OOP', 'Agile', 'Responsive Design', 'JavaScript', 'MongoDB', 'MySQL', 'Git', 'GitHub', 'Figma', 'Postman', 'Jira'];
+const TAPE_A = ['React.js', 'TypeScript', 'PostgreSQL', 'Node.js', 'Drizzle ORM', 'Supabase', 'React Query', 'Zustand', 'Tailwind CSS', 'Recharts', 'Express.js', 'Java', 'Spring Boot', 'Vite'];
+const TAPE_B = ['System Design', 'DSA', 'JWT Authentication', 'Swagger / OpenAPI', 'Zod Validation', 'Responsive Design', 'MongoDB', 'MySQL', 'Git', 'GitHub', 'Figma', 'Postman', 'Jira'];
 
 export function Skills() {
   return (

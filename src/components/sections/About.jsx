@@ -136,7 +136,7 @@ export function About() {
               <Zap className="w-4 h-4 text-[#a3e635]" />
               <span className="section-label">Core Skills</span>
             </div>
-            {['React.js', 'Java', 'JavaScript', 'Node.js', 'MongoDB', 'MySQL', 'DSA', 'Tailwind CSS', 'Express.js', 'Git', 'Agile', 'aws'].map((s) => (
+            {['React.js', 'TypeScript', 'JavaScript', 'Node.js', 'PostgreSQL', 'MongoDB', 'Tailwind CSS', 'Supabase', 'Express.js', 'Java', 'DSA', 'Git'].map((s) => (
               < span
                 key={s}
                 className="px-3 py-1.5 text-xs font-mono text-[#d1fae5] border border-[#1f2d1f] rounded-lg hover:border-[#a3e635]/40 hover:text-[#a3e635] transition-all duration-200 cursor-default"

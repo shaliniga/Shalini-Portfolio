@@ -1,10 +1,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, ExternalLink, ArrowUpRight } from 'lucide-react';
+import mindtrackLogo from '../../assets/logo.jpeg';
 
 const projects = [
   {
     num: '01',
+    title: 'MindTrack',
+    tagline: 'Mental Wellness & Burnout Analytics Platform',
+    description: 'A comprehensive mental wellness tracking platform designed to help organizations monitor employee wellness, identify early burnout trends, and manage team wellness metrics with role-based confidentiality.',
+    impact: 'Mental Wellness & Burnout Analytics',
+    tags: ['React 18', 'TypeScript', 'Node.js', 'PostgreSQL', 'Drizzle ORM', 'Supabase', 'Tailwind CSS', 'Recharts', 'Zustand', 'React Query'],
+    image: mindtrackLogo,
+    github: 'https://github.com/shaliniga/mindtrack',
+    live: 'https://mindtrack-03h8.onrender.com/',
+  },
+  {
+    num: '02',
     title: 'Ecart-Website',
     tagline: 'Modern online shopping platform',
     description: 'A full-stack eCommerce application featuring product listing, shopping cart functionality, email notifications, and seamless checkout with responsive design.',
@@ -15,7 +27,7 @@ const projects = [
     live: 'https://ecart-website-r5yq.onrender.com/',
   },
   {
-    num: '02',
+    num: '03',
     title: 'Map',
     tagline: 'Interactive location finder',
     description: 'A React-based mapping application using Leaflet.js and OpenStreetMap. Features dynamic search updates, API integration, and keyboard navigation.',
@@ -26,7 +38,7 @@ const projects = [
     live: 'https://map-liard-theta.vercel.app/',
   },
   {
-    num: '03',
+    num: '04',
     title: 'Dice Game',
     tagline: 'Interactive 2-player browser game',
     description: 'A competitive 2-player dice game. Roll to accumulate points, hold to secure your score, but beware of rolling a 1! First to 100 wins.',
