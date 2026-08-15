@@ -4,18 +4,18 @@ import { Mail, Linkedin, Github, ArrowUpRight, Send, Phone } from 'lucide-react'
 
 export function Contact() {
   return (
-    <section id="contact" className="relative py-28 overflow-hidden border-t border-[#1f2d1f]">
+    <section id="contact" className="relative py-20 md:py-28 overflow-hidden border-t border-[#1f2d1f]">
       {/* Number watermark */}
       <div className="number-bg absolute -top-6 left-0 select-none pointer-events-none">05</div>
 
       {/* Ambient glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-[#a3e635]/5 blur-[140px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
         {/* Label */}
         <motion.div
-          className="flex items-center gap-4 mb-14"
+          className="flex items-center gap-4 mb-10 md:mb-14"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -26,48 +26,48 @@ export function Contact() {
         </motion.div>
 
         {/* Big CTA layout */}
-        <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-12">
+        <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-10 lg:gap-12">
 
           {/* Left */}
           <motion.div
-            className="flex-1"
+            className="flex-1 w-full"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
             <h2
-              className="font-heading font-black text-[#f0fdf4] mb-6 leading-tight"
-              style={{ fontSize: 'clamp(2.5rem, 7vw, 5rem)' }}
+              className="font-heading font-black text-[#f0fdf4] mb-5 sm:mb-6 leading-tight"
+              style={{ fontSize: 'clamp(2.2rem, 6vw, 4.5rem)' }}
             >
               Let's build<br />
               something{' '}
               <span className="text-gradient-lime">great</span>{' '}
               together.
             </h2>
-            <p className="text-[#6b7280] text-lg max-w-lg leading-relaxed mb-8">
+            <p className="text-[#9ca3af] text-base sm:text-lg max-w-lg leading-relaxed mb-8">
               I'm currently exploring new opportunities. Whether you have a role, a project, or just want to connect — my inbox is open.
             </p>
 
             {/* Big email CTA */}
             <a
               href="mailto:shalini.g9995@gmail.com"
-              className="group inline-flex items-center gap-3 px-8 py-4 rounded-2xl bg-[#a3e635] text-[#050905] font-bold text-lg hover:bg-[#84cc16] transition-all duration-200 shadow-[0_0_40px_#a3e63540] hover:shadow-[0_0_60px_#a3e63560]"
+              className="group inline-flex items-center justify-center gap-2.5 sm:gap-3 px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl bg-[#a3e635] text-[#050905] font-bold text-sm sm:text-base md:text-lg hover:bg-[#84cc16] transition-all duration-200 shadow-[0_0_40px_#a3e63540] hover:shadow-[0_0_60px_#a3e63560] active:scale-95 break-all sm:break-normal max-w-full"
             >
-              <Send className="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              shalini.g9995@gmail.com
+              <Send className="w-4 sm:w-5 h-4 sm:h-5 flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <span>shalini.g9995@gmail.com</span>
             </a>
           </motion.div>
 
           {/* Right – Social links */}
           <motion.div
-            className="flex-shrink-0 w-full lg:w-72"
+            className="flex-shrink-0 w-full lg:w-80"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.2 }}
           >
-            <p className="section-label mb-6">Find me on</p>
+            <p className="section-label mb-4 sm:mb-6">Find me on</p>
             <div className="space-y-3">
               {[
                 {
@@ -104,9 +104,9 @@ export function Contact() {
                   href={s.href}
                   target={s.href.startsWith('http') ? '_blank' : undefined}
                   rel={s.href.startsWith('http') ? 'noreferrer' : undefined}
-                  className="group flex items-center gap-4 p-4 rounded-xl border border-[#1f2d1f] bg-[#111a11] hover:border-[#a3e635]/30 transition-all duration-200"
+                  className="group flex items-center gap-3.5 sm:gap-4 p-3.5 sm:p-4 rounded-xl border border-[#1f2d1f] bg-[#111a11] hover:border-[#a3e635]/30 transition-all duration-200"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-[#0d160d] border border-[#1f2d1f] flex items-center justify-center"
+                  <div className="w-10 h-10 rounded-lg bg-[#0d160d] border border-[#1f2d1f] flex items-center justify-center flex-shrink-0"
                     style={{ color: s.color }}>
                     {s.icon}
                   </div>

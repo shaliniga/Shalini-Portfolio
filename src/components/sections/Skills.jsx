@@ -13,15 +13,15 @@ const TAPE_B = ['System Design', 'DSA', 'JWT Authentication', 'Swagger / OpenAPI
 
 export function Skills() {
   return (
-    <section id="skills" className="relative py-28 overflow-hidden border-t border-[#1f2d1f]">
+    <section id="skills" className="relative py-20 md:py-28 overflow-hidden border-t border-[#1f2d1f]">
       {/* Number watermark */}
       <div className="number-bg absolute -top-6 right-0 select-none pointer-events-none text-right">02</div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
 
         {/* Label */}
         <motion.div
-          className="flex items-center gap-4 mb-14"
+          className="flex items-center gap-4 mb-10 md:mb-14"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -33,7 +33,7 @@ export function Skills() {
 
         {/* Headline */}
         <motion.h2
-          className="font-heading font-black text-[#f0fdf4] mb-16 leading-tight"
+          className="font-heading font-black text-[#f0fdf4] mb-12 md:mb-16 leading-tight"
           style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -44,20 +44,20 @@ export function Skills() {
         </motion.h2>
 
         {/* ── Marquee tapes ── */}
-        <div className="space-y-3 mb-16 overflow-hidden -mx-6">
+        <div className="space-y-3 mb-12 md:mb-16 overflow-hidden -mx-4 sm:-mx-6">
           {/* Tape 1 – forward */}
-          <div className="marquee-track marquee-forward border-y border-[#1f2d1f] py-3 bg-[#0d160d]">
+          <div className="marquee-track marquee-forward border-y border-[#1f2d1f] py-2.5 sm:py-3 bg-[#0d160d]">
             {[...TAPE_A, ...TAPE_A].map((s, i) => (
-              <span key={i} className="inline-flex items-center gap-3 px-6 text-sm font-mono text-[#6b7280] hover:text-[#a3e635] transition-colors cursor-default">
+              <span key={i} className="inline-flex items-center gap-2.5 sm:gap-3 px-4 sm:px-6 text-xs sm:text-sm font-mono text-[#6b7280] hover:text-[#a3e635] transition-colors cursor-default">
                 <span className="text-[#a3e635]">✦</span> {s}
               </span>
             ))}
           </div>
 
           {/* Tape 2 – reverse */}
-          <div className="marquee-track marquee-reverse border-y border-[#1f2d1f] py-3 bg-[#0d160d]">
+          <div className="marquee-track marquee-reverse border-y border-[#1f2d1f] py-2.5 sm:py-3 bg-[#0d160d]">
             {[...TAPE_B, ...TAPE_B].map((s, i) => (
-              <span key={i} className="inline-flex items-center gap-3 px-6 text-sm font-mono text-[#6b7280] hover:text-[#a3e635] transition-colors cursor-default">
+              <span key={i} className="inline-flex items-center gap-2.5 sm:gap-3 px-4 sm:px-6 text-xs sm:text-sm font-mono text-[#6b7280] hover:text-[#a3e635] transition-colors cursor-default">
                 <span className="text-[#22c55e]">◆</span> {s}
               </span>
             ))}
@@ -69,13 +69,13 @@ export function Skills() {
           {Object.entries(SKILLS).map(([cat, skills], idx) => (
             <motion.div
               key={cat}
-              className="card-dark rounded-2xl p-6 hover:border-[#a3e635]/30 transition-all duration-300 group"
+              className="card-dark rounded-2xl p-5 sm:p-6 hover:border-[#a3e635]/30 transition-all duration-300 group"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
             >
-              <div className="flex items-center justify-between mb-5">
+              <div className="flex items-center justify-between mb-4 sm:mb-5">
                 <span className="text-[#f0fdf4] font-heading font-bold text-base">{cat}</span>
                 <span className="text-[10px] font-mono text-[#6b7280] border border-[#1f2d1f] px-2 py-0.5 rounded-full">
                   {skills.length} skills
@@ -85,7 +85,7 @@ export function Skills() {
                 {skills.map((s) => (
                   <span
                     key={s}
-                    className="px-3 py-1.5 text-xs font-mono text-[#6b7280] bg-[#0d160d] border border-[#1f2d1f] rounded-lg hover:text-[#a3e635] hover:border-[#a3e635]/30 hover:bg-[#a3e635]/5 transition-all duration-150 cursor-default"
+                    className="px-2.5 sm:px-3 py-1 sm:py-1.5 text-xs font-mono text-[#6b7280] bg-[#0d160d] border border-[#1f2d1f] rounded-lg hover:text-[#a3e635] hover:border-[#a3e635]/30 hover:bg-[#a3e635]/5 transition-all duration-150 cursor-default"
                   >
                     {s}
                   </span>

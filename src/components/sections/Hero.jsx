@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, FileText } from 'lucide-react';
+import { ArrowDown, Download } from 'lucide-react';
 import resumePdf from '../../assets/Shalini g resume1.pdf';
 
 const TAPE_ITEMS = [
@@ -56,11 +56,11 @@ export function Hero() {
       </div>
 
       {/* ── Hero content ── */}
-      <div className="relative z-10 flex-1 max-w-7xl mx-auto px-6 w-full flex flex-col justify-center py-20">
+      <div className="relative z-10 flex-1 max-w-7xl mx-auto px-4 sm:px-6 w-full flex flex-col justify-center py-16 sm:py-20">
 
         {/* Status badge */}
-        <motion.div {...fadeUp(0.1)} className="mb-10">
-          <span className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#a3e635]/10 border border-[#a3e635]/20 text-[#a3e635] text-xs font-mono tracking-widest uppercase">
+        <motion.div {...fadeUp(0.1)} className="mb-8 sm:mb-10">
+          <span className="inline-flex items-center gap-2.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-[#a3e635]/10 border border-[#a3e635]/20 text-[#a3e635] text-xs font-mono tracking-widest uppercase">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute h-full w-full rounded-full bg-[#a3e635] opacity-75" />
               <span className="relative rounded-full h-2 w-2 bg-[#a3e635]" />
@@ -72,8 +72,8 @@ export function Hero() {
         {/* Name */}
         <div className="overflow-hidden mb-2">
           <motion.h1
-            className="font-heading font-black text-[#f0fdf4] leading-[0.9] tracking-tighter"
-            style={{ fontSize: 'clamp(3.5rem, 11vw, 9rem)' }}
+            className="font-heading font-black text-[#f0fdf4] leading-[0.95] tracking-tighter"
+            style={{ fontSize: 'clamp(2.75rem, 10vw, 8.5rem)' }}
             initial={{ y: '110%' }}
             animate={{ y: 0 }}
             transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.2 }}
@@ -83,21 +83,21 @@ export function Hero() {
         </div>
 
         {/* Role line */}
-        <div className="overflow-hidden mb-10">
+        <div className="overflow-hidden mb-8 sm:mb-10">
           <motion.div
-            className="flex flex-col md:flex-row md:items-end gap-4"
+            className="flex flex-col md:flex-row md:items-end gap-2 md:gap-4"
             initial={{ y: '110%' }}
             animate={{ y: 0 }}
             transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.35 }}
           >
             <h2
-              className="font-heading font-black text-gradient-lime leading-[0.9] tracking-tighter"
-              style={{ fontSize: 'clamp(3.5rem, 11vw, 9rem)' }}
+              className="font-heading font-black text-gradient-lime leading-[0.95] tracking-tighter"
+              style={{ fontSize: 'clamp(2.75rem, 10vw, 8.5rem)' }}
             >
               Full Stack
             </h2>
-            <span className="font-heading font-black text-[#1f2d1f] leading-[0.9] tracking-tighter"
-              style={{ fontSize: 'clamp(3.5rem, 11vw, 9rem)' }}>
+            <span className="font-heading font-black text-[#1f2d1f] leading-[0.95] tracking-tighter"
+              style={{ fontSize: 'clamp(2.75rem, 10vw, 8.5rem)' }}>
               Engineer
             </span>
           </motion.div>
@@ -105,7 +105,7 @@ export function Hero() {
 
         {/* Bottom row */}
         <motion.div
-          className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-10"
+          className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-8 sm:gap-10"
           {...fadeUp(0.55)}
         >
           <p className="text-[#6b7280] text-base md:text-lg max-w-md leading-relaxed">
@@ -113,10 +113,10 @@ export function Hero() {
             Turning complex problems into clean, performant interfaces.
           </p>
 
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4 w-full sm:w-auto">
             <a
               href="#projects"
-              className="group flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#a3e635] text-[#050905] font-bold text-sm hover:bg-[#84cc16] transition-all duration-200 shadow-[0_0_30px_#a3e63540] hover:shadow-[0_0_50px_#a3e63560]"
+              className="group flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 rounded-xl bg-[#a3e635] text-[#050905] font-bold text-sm hover:bg-[#84cc16] transition-all duration-200 shadow-[0_0_30px_#a3e63540] hover:shadow-[0_0_50px_#a3e63560] active:scale-95"
             >
               View Work
               <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
@@ -124,17 +124,17 @@ export function Hero() {
             <a
               href={resumePdf}
               download="Shalini_Resume.pdf"
-              className="flex items-center gap-2 px-7 py-3.5 rounded-xl border border-[#1f2d1f] text-[#d1fae5] text-sm font-semibold hover:border-[#a3e635]/40 hover:text-[#a3e635] transition-all duration-200"
+              className="group/btn flex-1 sm:flex-initial inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 rounded-xl bg-[#0d160d] border border-[#233523] text-[#f0fdf4] text-sm font-semibold hover:border-[#a3e635]/60 hover:text-[#a3e635] hover:bg-[#111e11] hover:shadow-[0_0_20px_#a3e63520] transition-all duration-200 active:scale-95"
             >
-              <FileText className="w-4 h-4" />
-              Résumé
+              <Download className="w-4 h-4 text-[#a3e635] group-hover/btn:translate-y-0.5 transition-transform" />
+              Resume
             </a>
           </div>
         </motion.div>
 
         {/* Stats strip */}
         <motion.div
-          className="mt-20 pt-8 border-t border-[#1f2d1f] grid grid-cols-2 md:grid-cols-4 gap-6"
+          className="mt-14 sm:mt-20 pt-6 sm:pt-8 border-t border-[#1f2d1f] grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6"
           {...fadeUp(0.7)}
         >
           {[
@@ -143,11 +143,11 @@ export function Hero() {
             { n: '20+', l: 'Reusable Components' },
             { n: '100%', l: 'Responsive Design' },
           ].map((s) => (
-            <div key={s.l} className="group">
-              <div className="text-[#a3e635] font-heading font-black text-4xl md:text-5xl tabular-nums group-hover:drop-shadow-[0_0_20px_#a3e635] transition-all">
+            <div key={s.l} className="group p-2">
+              <div className="text-[#a3e635] font-heading font-black text-3xl sm:text-4xl md:text-5xl tabular-nums group-hover:drop-shadow-[0_0_20px_#a3e635] transition-all">
                 {s.n}
               </div>
-              <div className="text-[#6b7280] text-xs font-mono uppercase tracking-widest mt-1">{s.l}</div>
+              <div className="text-[#6b7280] text-[11px] sm:text-xs font-mono uppercase tracking-widest mt-1">{s.l}</div>
             </div>
           ))}
         </motion.div>

@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, ArrowUpRight } from 'lucide-react';
+import { Github, ExternalLink } from 'lucide-react';
 import mindtrackLogo from '../../assets/logo.jpeg';
+import mindtrackMobileIcon from '../../assets/icon.png';
 
 const projects = [
   {
@@ -12,6 +13,7 @@ const projects = [
     impact: 'Mental Wellness & Burnout Analytics',
     tags: ['React 18', 'TypeScript', 'Node.js', 'PostgreSQL', 'Drizzle ORM', 'Supabase', 'Tailwind CSS', 'Recharts', 'Zustand', 'React Query'],
     image: mindtrackLogo,
+    mobileImage: mindtrackMobileIcon,
     github: 'https://github.com/shaliniga/mindtrack',
     live: 'https://mindtrack-03h8.onrender.com/',
   },
@@ -92,38 +94,46 @@ export function Projects() {
               transition={{ duration: 0.7, delay: i * 0.15 }}
               className="group relative rounded-3xl overflow-hidden border border-[#1f2d1f] hover:border-[#a3e635]/30 transition-all duration-500"
             >
-              {/* Full-bleed image */}
-              <div className="relative w-full aspect-[16/7] overflow-hidden">
-                <img
-                  src={p.image}
-                  alt={p.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 brightness-[0.3] group-hover:brightness-[0.4]"
-                />
+              {/* Full-bleed background image container */}
+              <div className="relative w-full min-h-[380px] md:min-h-0 md:aspect-[16/7] overflow-hidden flex flex-col justify-end">
+                <picture className="absolute inset-0 w-full h-full pointer-events-none">
+                  {p.mobileImage && (
+                    <source media="(max-width: 767px)" srcSet={p.mobileImage} />
+                  )}
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 brightness-[0.25] group-hover:brightness-[0.35]"
+                  />
+                </picture>
+                
+                {/* Gradient overlay to guarantee crisp text readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050905]/95 via-[#050905]/70 to-[#050905]/30 md:from-[#050905]/85 md:via-[#050905]/40 md:to-transparent pointer-events-none" />
 
                 {/* Content overlay */}
-                <div className="absolute inset-0 flex flex-col md:flex-row items-center md:items-end justify-between p-8 md:p-10">
+                <div className="relative z-10 flex flex-col md:flex-row items-start md:items-end justify-between p-6 sm:p-8 md:p-10 gap-6">
 
                   {/* Left: text */}
-                  <div className="flex-1">
+                  <div className="flex-1 min-w-0">
                     <div className="mb-3 flex items-center gap-3">
-                      <span className="font-mono text-[#a3e635]/60 text-sm">{p.num}</span>
+                      <span className="font-mono text-[#a3e635]/80 text-sm font-semibold">{p.num}</span>
                       <span className="h-px w-10 bg-[#a3e635]/30" />
                     </div>
                     <h3 className="font-heading font-black text-[#f0fdf4] mb-2 leading-tight"
                       style={{ fontSize: 'clamp(1.4rem, 3vw, 2.2rem)' }}>
                       {p.title}
                     </h3>
-                    <p className="text-[#6b7280] text-sm mb-4 max-w-lg">{p.tagline}</p>
+                    <p className="text-[#9ca3af] text-sm mb-4 max-w-lg">{p.tagline}</p>
 
                     {/* Impact */}
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#a3e635]/10 border border-[#a3e635]/20 text-[#a3e635] text-xs font-mono mb-5">
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#a3e635]/10 border border-[#a3e635]/20 text-[#a3e635] text-xs font-mono mb-4">
                       {p.impact}
                     </div>
 
                     {/* Tags */}
                     <div className="flex flex-wrap gap-2">
                       {p.tags.map((t) => (
-                        <span key={t} className="px-2.5 py-1 text-xs font-mono text-[#d1fae5] bg-[#050905]/70 border border-[#1f2d1f] rounded-lg">
+                        <span key={t} className="px-2.5 py-1 text-xs font-mono text-[#d1fae5] bg-[#050905]/80 border border-[#1f2d1f] rounded-lg">
                           {t}
                         </span>
                       ))}
@@ -131,21 +141,21 @@ export function Projects() {
                   </div>
 
                   {/* Right: link buttons */}
-                  <div className="flex gap-3 mt-6 md:mt-0 md:ml-8 flex-shrink-0">
+                  <div className="flex flex-wrap sm:flex-nowrap items-center gap-3 w-full md:w-auto md:ml-8 flex-shrink-0">
                     <a
                       href={p.live}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#a3e635] text-[#050905] text-sm font-bold hover:bg-[#84cc16] transition-colors shadow-[0_0_20px_#a3e63540]"
+                      className="flex-1 md:flex-initial flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#a3e635] text-[#050905] text-sm font-bold hover:bg-[#84cc16] transition-colors shadow-[0_0_20px_#a3e63540]"
                     >
                       <ExternalLink className="w-4 h-4" />
-                      Live
+                      View Site
                     </a>
                     <a
                       href={p.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#050905]/80 backdrop-blur border border-[#1f2d1f] text-[#d1fae5] text-sm font-semibold hover:border-[#a3e635]/30 transition-colors"
+                      className="flex-1 md:flex-initial flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#050905]/90 backdrop-blur border border-[#1f2d1f] text-[#d1fae5] text-sm font-semibold hover:border-[#a3e635]/30 hover:text-[#a3e635] transition-colors"
                     >
                       <Github className="w-4 h-4" />
                       Code
@@ -160,3 +170,4 @@ export function Projects() {
     </section>
   );
 }
+

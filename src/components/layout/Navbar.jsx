@@ -22,11 +22,11 @@ export function Navbar() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled
-          ? 'bg-[#050905]/90 backdrop-blur-xl border-b border-[#1f2d1f]'
+          ? 'bg-[#050905]/95 backdrop-blur-xl border-b border-[#1f2d1f]'
           : 'bg-transparent'
         }`}
     >
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
 
         {/* Logo */}
         <a href="#" className="flex items-center gap-3 group">
@@ -55,11 +55,11 @@ export function Navbar() {
         {/* Right */}
         <div className="hidden md:flex items-center gap-3">
           <a href="https://github.com/shaliniga" target="_blank" rel="noreferrer"
-            className="text-[#6b7280] hover:text-[#a3e635] transition-colors">
+            className="text-[#6b7280] hover:text-[#a3e635] transition-colors p-1" aria-label="GitHub">
             <Github className="w-5 h-5" />
           </a>
           <a href="https://www.linkedin.com/in/shalini-g-239b7b29b/" target="_blank" rel="noreferrer"
-            className="text-[#6b7280] hover:text-[#a3e635] transition-colors">
+            className="text-[#6b7280] hover:text-[#a3e635] transition-colors p-1" aria-label="LinkedIn">
             <Linkedin className="w-5 h-5" />
           </a>
           <a
@@ -70,38 +70,67 @@ export function Navbar() {
           </a>
         </div>
 
-        {/* Mobile */}
-        <button className="md:hidden text-[#f0fdf4] p-2" onClick={() => setOpen(!open)}>
-          {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        {/* Mobile menu button */}
+        <button
+          className="md:hidden text-[#f0fdf4] p-2 focus:outline-none hover:text-[#a3e635] transition-colors"
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+        >
+          {open ? <X className="w-6 h-6 text-[#a3e635]" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden bg-[#0d160d] border-b border-[#1f2d1f]"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25 }}
+            className="md:hidden bg-[#0d160d]/98 backdrop-blur-2xl border-b border-[#1f2d1f] overflow-hidden"
           >
-            <nav className="flex flex-col px-6 py-6 gap-2">
+            <nav className="flex flex-col px-5 py-6 gap-2">
               {links.map((l) => (
                 <a
                   key={l.name}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="py-2.5 text-[#d1fae5] font-medium border-b border-[#1f2d1f] last:border-0 hover:text-[#a3e635] transition-colors flex items-center justify-between"
+                  className="py-3 text-[#d1fae5] font-medium border-b border-[#1f2d1f]/60 hover:text-[#a3e635] transition-colors flex items-center justify-between text-base"
                 >
-                  {l.name} <ArrowUpRight className="w-4 h-4 opacity-40" />
+                  {l.name} <ArrowUpRight className="w-4 h-4 opacity-50" />
                 </a>
               ))}
-              <a
-                href="#contact"
-                className="mt-4 py-3 text-center rounded-xl border border-[#a3e635] text-[#a3e635] font-semibold hover:bg-[#a3e635] hover:text-[#050905] transition-all"
-              >
-                Hire Me
-              </a>
+              
+              <div className="flex items-center justify-between pt-4 mt-2">
+                <div className="flex items-center gap-3">
+                  <a
+                    href="https://github.com/shaliniga"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="p-2 rounded-lg border border-[#1f2d1f] text-[#6b7280] hover:text-[#a3e635] hover:border-[#a3e635]/40 transition-colors"
+                    aria-label="GitHub"
+                  >
+                    <Github className="w-5 h-5" />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/shalini-g-239b7b29b/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="p-2 rounded-lg border border-[#1f2d1f] text-[#6b7280] hover:text-[#a3e635] hover:border-[#a3e635]/40 transition-colors"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="w-5 h-5" />
+                  </a>
+                </div>
+                
+                <a
+                  href="#contact"
+                  onClick={() => setOpen(false)}
+                  className="flex-1 ml-4 py-2.5 text-center rounded-xl bg-[#a3e635] text-[#050905] font-bold text-sm hover:bg-[#84cc16] transition-all shadow-[0_0_20px_#a3e63530]"
+                >
+                  Hire Me
+                </a>
+              </div>
             </nav>
           </motion.div>
         )}
